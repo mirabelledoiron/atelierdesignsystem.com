@@ -1,0 +1,70 @@
+{/* src/docs/Contribution.mdx */}
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Guidelines/Contributing" />
+
+# Contributing
+
+How to propose, build, and document new components for the Atelier design system.
+
+---
+
+## Component Proposal Process
+
+### 1. Identify the Need
+Document the use case. Is this solving a recurring problem? Is there an existing component that could be extended instead?
+
+### 2. Research Patterns
+Look at how other design systems handle it. Check Radix, shadcn/ui, and Material for prior art.
+
+### 3. Draft the API
+Define props, variants, and sizes. Keep the API surface minimal — you can always add, but removing is a breaking change.
+
+### 4. Build & Document
+Create the component with all variants, states, and accessibility support. Add a Storybook page with install, import, usage, and API reference.
+
+### 5. Review & Merge
+Get design and engineering review. Ensure WCAG compliance, responsive behavior, and dark mode support.
+
+---
+
+## File Structure
+
+```
+src/
+├── components/
+│   └── ui/
+│       └── my-component.tsx        # Component implementation
+│       └── my-component.stories.tsx # Storybook stories
+├── pages/
+│   └── MyComponentPage.tsx         # Documentation page (custom site)
+└── App.tsx                         # Route registration
+```
+
+---
+
+## Component Checklist
+
+Before submitting, ensure:
+
+1. TypeScript types for all props
+2. Supports `className` override via `cn()`
+3. Uses semantic design tokens (no hardcoded colors)
+4. Keyboard navigable
+5. ARIA attributes where needed
+6. Works in both light and dark mode
+7. Responsive at all breakpoints
+8. Documentation page with install, import, usage, and API table
+9. Do's and don'ts documented
+
+---
+
+## Naming Conventions
+
+| Category | Convention | Example |
+|----------|-----------|---------|
+| Files | kebab-case.tsx | `hover-card.tsx` |
+| Components | PascalCase | `HoverCard` |
+| Props | camelCase | `isOpen`, `onClose` |
+| CSS Variables | kebab-case | `--brand-primary` |
+| Tailwind tokens | kebab-case | `bg-primary` |

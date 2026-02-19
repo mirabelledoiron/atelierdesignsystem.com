@@ -1,0 +1,67 @@
+# Atelier Design System
+
+A machine-readable design system built with React, TypeScript, Tailwind CSS, and shadcn/ui. Atelier serves as both a living component library and a structured knowledge base — every token, component, pattern, and guideline is documented visually and exported as static JSON for programmatic consumption.
+
+## Tech Stack
+
+- **React 18** — Component framework
+- **TypeScript** — Type-safe development
+- **Tailwind CSS** — Utility-first styling
+- **shadcn/ui** — Copy-paste component system
+- **Radix Primitives** — Accessible headless UI
+- **Vite** — Build tooling
+- **Lucide** — Icon library
+
+## Getting Started
+
+```sh
+# Clone the repository
+git clone <YOUR_GIT_URL>
+cd atelier-ds
+
+# Install dependencies
+npm install
+
+# Start the dev server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## Project Structure
+
+```
+atelier-ds/
+├── public/
+│   └── tokens/              # Machine-readable JSON manifest
+│       ├── manifest.json
+│       ├── design-tokens.json
+│       ├── components.json
+│       ├── patterns.json
+│       └── guidelines.json
+├── src/
+│   ├── components/ui/       # shadcn/ui components
+│   ├── hooks/               # Custom React hooks
+│   ├── pages/               # Documentation pages
+│   ├── lib/                 # Utilities
+│   └── index.css            # Design tokens as CSS variables
+├── tailwind.config.ts       # Tailwind + token integration
+└── components.json          # shadcn/ui configuration
+```
+
+## JSON Manifest
+
+All design decisions are exported as structured JSON in `/public/tokens/`. These files are served statically and can be fetched by any tool or service:
+
+| File | Description |
+|------|-------------|
+| `manifest.json` | Central index — version, tech stack, file map |
+| `design-tokens.json` | Colors, typography, spacing, shadows, radii, motion, z-index, breakpoints |
+| `components.json` | 40+ component definitions with props, variants, imports, and install commands |
+| `patterns.json` | Form, layout, content state, and data patterns |
+| `guidelines.json` | Accessibility rules, design principles, content guidelines, contribution workflow |
+
+## License
+
+Private — all rights reserved.

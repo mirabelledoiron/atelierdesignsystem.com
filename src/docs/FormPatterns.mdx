@@ -1,0 +1,143 @@
+{/* src/docs/FormPatterns.mdx */}
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Patterns/Form Patterns" />
+
+# Form Patterns
+
+Common form layouts, validation states, and field grouping patterns.
+
+---
+
+## Simple Form
+
+Stacked label + input pattern — the default for most forms.
+
+```tsx
+<form className="space-y-4 max-w-md">
+  <div className="space-y-2">
+    <Label htmlFor="name">Full Name</Label>
+    <Input id="name" placeholder="Alice Chen" />
+  </div>
+  <div className="space-y-2">
+    <Label htmlFor="email">Email</Label>
+    <Input id="email" type="email" placeholder="alice@example.com" />
+  </div>
+  <div className="space-y-2">
+    <Label htmlFor="msg">Message</Label>
+    <Textarea id="msg" placeholder="How can we help?" />
+  </div>
+  <Button type="submit" className="w-full">Submit</Button>
+</form>
+```
+
+## Inline Fields
+
+Side-by-side fields for related data (e.g., first/last name, city/ZIP).
+
+```tsx
+<div className="grid grid-cols-2 gap-4">
+  <div className="space-y-2">
+    <Label>First Name</Label>
+    <Input placeholder="Alice" />
+  </div>
+  <div className="space-y-2">
+    <Label>Last Name</Label>
+    <Input placeholder="Chen" />
+  </div>
+</div>
+
+<div className="grid grid-cols-3 gap-4">
+  <div className="space-y-2 col-span-2">
+    <Label>City</Label>
+    <Input placeholder="San Francisco" />
+  </div>
+  <div className="space-y-2">
+    <Label>ZIP</Label>
+    <Input placeholder="94102" />
+  </div>
+</div>
+```
+
+## Validation States
+
+### Error
+```tsx
+<div className="space-y-2">
+  <Label>Email</Label>
+  <Input className="border-destructive" defaultValue="invalid-email" />
+  <p className="text-xs text-destructive">Please enter a valid email address.</p>
+</div>
+```
+
+### Success
+```tsx
+<div className="space-y-2">
+  <Label>Username</Label>
+  <Input className="border-secondary" defaultValue="alice_chen" />
+  <p className="text-xs text-secondary">Username is available.</p>
+</div>
+```
+
+### Helper Text
+```tsx
+<div className="space-y-2">
+  <Label>Password</Label>
+  <Input type="password" placeholder="Enter password" />
+  <p className="text-xs text-muted-foreground">Must be at least 8 characters with one number.</p>
+</div>
+```
+
+## Form with Select & Checkbox
+
+Mixed control types in a single form.
+
+```tsx
+<form className="space-y-4 max-w-md">
+  <div className="space-y-2">
+    <Label>Role</Label>
+    <Select>
+      <SelectTrigger><SelectValue placeholder="Select role" /></SelectTrigger>
+      <SelectContent>
+        <SelectItem value="dev">Developer</SelectItem>
+        <SelectItem value="design">Designer</SelectItem>
+        <SelectItem value="pm">Product Manager</SelectItem>
+      </SelectContent>
+    </Select>
+  </div>
+  <div className="flex items-center space-x-2">
+    <Checkbox id="agree" />
+    <Label htmlFor="agree" className="text-sm font-normal">
+      I agree to the terms of service
+    </Label>
+  </div>
+  <div className="flex gap-3">
+    <Button type="submit">Create Account</Button>
+    <Button variant="outline">Cancel</Button>
+  </div>
+</form>
+```
+
+## Field Group Reference
+
+```html
+<!-- Stacked (default) -->
+<div className="space-y-2">
+  <Label>Field</Label>
+  <Input />
+  <p className="text-xs text-muted-foreground">Helper text</p>
+</div>
+
+<!-- Inline (side-by-side) -->
+<div className="grid grid-cols-4 items-center gap-4">
+  <Label className="text-right">Field</Label>
+  <Input className="col-span-3" />
+</div>
+
+<!-- Validation error -->
+<div className="space-y-2">
+  <Label>Field</Label>
+  <Input className="border-destructive" />
+  <p className="text-xs text-destructive">Error message</p>
+</div>
+```

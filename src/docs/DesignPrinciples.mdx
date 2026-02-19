@@ -1,0 +1,47 @@
+{/* src/docs/DesignPrinciples.mdx */}
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Guidelines/Design Principles" />
+
+# Design Principles
+
+The philosophy and values that guide every decision in the Atelier design system.
+
+---
+
+## Core Principles
+
+### 1. Clarity Over Cleverness
+Every element should communicate its purpose immediately. Avoid ambiguity in labels, icons, and interactions. When in doubt, be explicit.
+
+### 2. Consistency Breeds Confidence
+Reuse patterns, tokens, and components. Users build mental models — consistency reinforces them. Every deviation should be intentional and justified.
+
+### 3. Accessible by Default
+Accessibility is not a feature — it's a requirement. Every component must meet WCAG 2.1 AA standards. Keyboard navigation, screen reader support, and sufficient contrast are non-negotiable.
+
+### 4. Progressive Disclosure
+Show only what's needed at each step. Use layered information architecture — summaries first, details on demand. Reduce cognitive load.
+
+### 5. Density with Purpose
+Information-dense interfaces are fine when they serve expert users. Balance data visibility with breathing room. Let spacing and hierarchy guide the eye.
+
+### 6. Motion with Meaning
+Animation should communicate state changes, not decorate. Every transition should answer: what changed, where did it go, what should I look at next?
+
+### 7. Ship, Then Refine
+A working component shipped today beats a perfect component shipped never. Start with sensible defaults, iterate based on real usage data.
+
+---
+
+## Decision Framework
+
+When evaluating component or pattern decisions, ask:
+
+| # | Question |
+|---|----------|
+| Q1 | Does it solve a real, recurring problem? |
+| Q2 | Is it consistent with existing patterns? |
+| Q3 | Can a new team member understand it in under 30 seconds? |
+| Q4 | Does it degrade gracefully (accessibility, responsive, error states)? |
+| Q5 | Will it still make sense in 6 months? |

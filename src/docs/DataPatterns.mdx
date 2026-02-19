@@ -1,0 +1,89 @@
+{/* src/docs/DataPatterns.mdx */}
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Patterns/Data Patterns" />
+
+# Data Patterns
+
+Tables with filtering, sorting, card grids, and list views.
+
+---
+
+## Filterable Table
+
+Table with search and filter controls above, sortable column headers, and pagination below.
+
+```tsx
+{/* Filter bar */}
+<div className="flex items-center gap-3">
+  <div className="relative flex-1 max-w-xs">
+    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" />
+    <Input placeholder="Search products..." className="pl-9" />
+  </div>
+  <Button variant="outline" size="sm">
+    <Filter className="w-4 h-4 mr-2" /> Filter
+  </Button>
+</div>
+
+{/* Sortable column header */}
+<TableHead>
+  <button className="flex items-center gap-1 hover:text-foreground transition-colors">
+    Column <ArrowUpDown className="w-3 h-3" />
+  </button>
+</TableHead>
+
+{/* Pagination */}
+<div className="flex items-center justify-between text-sm text-muted-foreground">
+  <span>4 results</span>
+  <div className="flex gap-2">
+    <Button variant="outline" size="sm" disabled>Previous</Button>
+    <Button variant="outline" size="sm">Next</Button>
+  </div>
+</div>
+```
+
+## Metric Cards
+
+KPI cards for dashboard overviews. Use semantic color for change indicators.
+
+```tsx
+<div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+  <div className="rounded-xl border border-border bg-card p-4">
+    <p className="text-xs text-muted-foreground mb-1">Total Revenue</p>
+    <p className="text-2xl font-bold text-foreground">$85,450</p>
+    <p className="text-xs mt-1 text-secondary">+12.5% from last month</p>
+  </div>
+  {/* ...more cards */}
+</div>
+```
+
+## List View
+
+Compact list with inline actions — ideal for narrow spaces or mobile.
+
+```tsx
+<div className="divide-y divide-border rounded-xl border border-border overflow-hidden">
+  {data.map((row) => (
+    <div key={row.name} className="flex items-center justify-between px-4 py-3 bg-card hover:bg-muted/50 transition-colors">
+      <div>
+        <p className="text-sm font-medium text-foreground">{row.name}</p>
+        <p className="text-xs text-muted-foreground">{row.users} users</p>
+      </div>
+      <div className="flex items-center gap-3">
+        <span className="text-sm font-mono text-foreground">{row.revenue}</span>
+        <Button variant="ghost" size="sm">View</Button>
+      </div>
+    </div>
+  ))}
+</div>
+```
+
+---
+
+## When to Use Each
+
+| Pattern | Use Case |
+|---------|----------|
+| Filterable Table | Structured data with sorting/filtering needs |
+| Metric Cards | KPI dashboards, overview summaries |
+| List View | Simple browsing, mobile-first, compact spaces |
