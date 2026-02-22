@@ -1,4 +1,4 @@
-# Atelier Design System
+# Atelier Design System Storybook
 
 A machine-readable design system built with React, TypeScript, Tailwind CSS, and shadcn/ui. Atelier serves as both a living component library and a structured knowledge base — every token, component, pattern, and guideline is documented visually and exported as static JSON for programmatic consumption.
 
@@ -17,8 +17,8 @@ A machine-readable design system built with React, TypeScript, Tailwind CSS, and
 ### Clone the repository
 
 ```bash
-git clone https://github.com/mirabelledoiron/atelierdesignsystem.com.git atelier-design-system
-cd atelier-design-system
+git clone .....
+cd storybook.atelierdesignsystem.com
 ```
 
 ### Install dependencies
@@ -37,6 +37,12 @@ npm run dev
 
 ```bash
 npm run build
+```
+
+## Update
+
+```bash
+npx storybook@latest upgrade
 ```
 
 ## Fonts
@@ -64,7 +70,7 @@ Expected paths used by the app:
 ## Project Structure
 
 ```
-atelier-design-system/
+storybook.atelierdesignsystem.com/
 ├── public/
 │   └── tokens/              # Machine-readable JSON manifest
 │       ├── manifest.json

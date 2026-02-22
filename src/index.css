@@ -211,7 +211,14 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: var(--font-sans);
+  }
+
+  body, button, input, textarea, select {
+    font-family: var(--font-sans) !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: hsl(var(--foreground));
   }
 
   code, pre, .font-mono {

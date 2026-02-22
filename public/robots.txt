@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /iframe.html
+Disallow: /index.json
+Disallow: /project.json
 
-Sitemap: https://www.atelierdesignsystem.com/sitemap.xml
+Sitemap: https://storybook.atelierdesignsystem.com/sitemap.xml

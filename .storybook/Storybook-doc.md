@@ -86,7 +86,7 @@ This will:
 #### `.storybook/preview.ts`
 
 ```ts
-import type { Preview } from "@storybook/react";
+import type { Preview } from "@storybook/react-vite";
 import "../src/index.css"; // Import your Tailwind + design tokens
 
 const preview: Preview = {

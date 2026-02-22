@@ -23,3 +23,67 @@
     document.head.appendChild(shortcut);
   })();
 </script>
+
+<style>
+  .sb-plugin-canvas-container { padding: 0 !important; }
+  .docs-story { background-color: transparent !important; }
+
+  /* Ensure the preview iframe itself never defaults to white */
+  html, body {
+    background-color: hsl(var(--background)) !important;
+  }
+
+  /* Docs mode wrappers */
+  .sbdocs, .sbdocs-wrapper, .sbdocs-content {
+    background: transparent !important;
+  }
+
+  /* Storybook Docs typography defaults can override our tokens */
+  #storybook-docs,
+  .sbdocs {
+    color: hsl(var(--foreground)) !important;
+  }
+
+  /* Docs code actions (Copy / Show code) should follow our tokens */
+  #storybook-docs .docblock-source button,
+  #storybook-docs .docblock-code-toggle {
+    background: hsl(var(--background)) !important;
+    color: hsl(var(--foreground)) !important;
+    border-top-color: hsl(var(--border)) !important;
+    border-left-color: hsl(var(--border)) !important;
+    border-right-color: hsl(var(--border)) !important;
+    font-family: var(--font-sans) !important;
+  }
+
+  #storybook-docs .docblock-source button:hover,
+  #storybook-docs .docblock-code-toggle:hover {
+    background: hsl(var(--accent)) !important;
+    color: hsl(var(--accent-foreground)) !important;
+  }
+
+  #storybook-docs .docblock-source button:focus,
+  #storybook-docs .docblock-code-toggle:focus {
+    outline: 0 none !important;
+    box-shadow: 0 -3px 0 0 hsl(var(--ring)) inset !important;
+  }
+
+  #storybook-docs h1,
+  #storybook-docs h2,
+  #storybook-docs h3,
+  #storybook-docs h4,
+  #storybook-docs h5,
+  #storybook-docs h6,
+  .sbdocs h1,
+  .sbdocs h2,
+  .sbdocs h3,
+  .sbdocs h4,
+  .sbdocs h5,
+  .sbdocs h6 {
+    color: hsl(var(--foreground)) !important;
+  }
+
+  /* Canvas wrappers */
+  .sb-show-main, #storybook-root {
+    background: transparent !important;
+  }
+</style>

@@ -1,5 +1,4 @@
-{/* src/docs/ContentGuidelines.mdx */}
-import { Meta } from "@storybook/blocks";
+import { Meta } from "@storybook/addon-docs/blocks";
 
 <Meta title="Guidelines/Content Guidelines" />
 
@@ -9,17 +8,28 @@ Voice, tone, and writing standards for consistent, human-centered copy.
 
 ---
 
-## Voice & Tone
+## 1. Sentence case
+
+Use sentence case for headings, labels, and buttons.
+
+- **Correct:** "Save changes"
+- **Incorrect:** "Save Changes"
+
+---
+
+## Voice & tone
 
 The Atelier voice is clear, confident, and helpful — never robotic or condescending.
 
-**We Are:**
+**We are:**
+
 - Clear and concise
 - Helpful, not hand-holding
 - Professional but warm
 - Confident without arrogance
 
-**We Avoid:**
+**We avoid:**
+
 - Jargon without context
 - Passive voice
 - Exclamation marks overuse
@@ -27,15 +37,17 @@ The Atelier voice is clear, confident, and helpful — never robotic or condesce
 
 ---
 
-## Writing Examples
+## Writing examples
 
 **Do:**
+
 - "Save changes" — clear action
 - "3 items selected" — precise feedback
 - "Enter your email to continue" — helpful instruction
 - "Something went wrong. Try again." — honest error
 
 **Don't:**
+
 - "Click here!!!" — vague and aggressive
 - "Oopsie! An error occurred!" — too casual for errors
 - "Please be advised that the operation has concluded" — verbose
@@ -43,14 +55,14 @@ The Atelier voice is clear, confident, and helpful — never robotic or condesce
 
 ---
 
-## Button Labels
+## Button labels
 
 Action-oriented, starting with a verb.
 
 | Label | Use Case |
-|-------|----------|
+| --- | --- |
 | `Save` | For persisting changes |
-| `Create` | For new items (Create Project) |
+| `Create` | For new items (Create project) |
 | `Delete` | For destructive actions (pair with confirmation) |
 | `Cancel` | For dismissing without action |
 | `Continue` | For multi-step flows |
@@ -58,24 +70,26 @@ Action-oriented, starting with a verb.
 
 ---
 
-## Error Messages
+## Error messages
 
 Be specific about what went wrong and how to fix it.
 
+Reference our **[semantic colors](?path=/docs/foundations-colors--docs)** when choosing error tone and color.
+
 | Bad | Good |
-|-----|------|
+| --- | --- |
 | ~~Invalid input~~ | Email must include @ and a domain (e.g., name@example.com) |
 | ~~Error occurred~~ | We couldn't save your changes. Check your connection and try again. |
 | ~~Forbidden~~ | You don't have permission to edit this project. Contact the owner. |
 
 ---
 
-## Placeholder Text
+## Placeholder text
 
-Provide realistic examples, not generic text.
+Provide realistic examples, not generic filler.
 
 | Bad | Good |
-|-----|------|
+| --- | --- |
 | ~~Enter text here~~ | e.g., alice@example.com |
 | ~~Type something~~ | Search by name or email... |
 | ~~Input~~ | San Francisco, CA |

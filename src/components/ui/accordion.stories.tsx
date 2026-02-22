@@ -1,18 +1,36 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./accordion";
 
 const meta: Meta<typeof Accordion> = {
   title: "Components/Accordion",
   component: Accordion,
   tags: ["autodocs"],
+  args: {
+    type: "single",
+    collapsible: true,
+    className: "w-full max-w-md",
+  },
+  argTypes: {
+    type: {
+      control: { type: "radio" },
+      options: ["single", "multiple"],
+    },
+    collapsible: {
+      control: { type: "boolean" },
+      if: { arg: "type", eq: "single" },
+    },
+    className: {
+      control: { type: "text" },
+    },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof Accordion>;
 
 export const Default: Story = {
-  render: () => (
-    <Accordion type="single" collapsible className="w-full max-w-md">
+  render: (args) => (
+    <Accordion {...args}>
       <AccordionItem value="item-1">
         <AccordionTrigger>Is it accessible?</AccordionTrigger>
         <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
@@ -30,8 +48,11 @@ export const Default: Story = {
 };
 
 export const Multiple: Story = {
-  render: () => (
-    <Accordion type="multiple" className="w-full max-w-md">
+  args: {
+    type: "multiple",
+  },
+  render: (args) => (
+    <Accordion {...args}>
       <AccordionItem value="item-1">
         <AccordionTrigger>First item</AccordionTrigger>
         <AccordionContent>Content for the first item.</AccordionContent>

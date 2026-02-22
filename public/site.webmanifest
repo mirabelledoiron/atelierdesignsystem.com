@@ -1,8 +1,7 @@
 {
-  "name": "Atelier Design System",
-  "short_name": "Atelier",
-  "start_url": "/",
-  "scope": "/",
+  "name": "Atelier Design System Storybook",
+  "short_name": "Atelier DS",
+  "description": "High-fidelity component documentation for Atelier.",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -15,7 +14,8 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#1a1a2e",
+  "theme_color": "#ea435c",
   "background_color": "#1a1a2e",
-  "display": "standalone"
+  "display": "standalone",
+  "start_url": "/"
 }

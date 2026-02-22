@@ -55,8 +55,8 @@ export default function GetStartedPage() {
         <div className="space-y-3">
           <div>
             <p className="text-xs font-mono text-muted-foreground mb-1.5">1. Clone & install</p>
-            <CodeBlock>{`git clone https://github.com/mirabelledoiron/atelierdesignsystem.com.git atelier-design-system
-cd atelier-design-system
+            <CodeBlock>{`git clone https://github.com/mirabelledoiron/atelierdesignsystem.com.git storybook.atelierdesignsystem.com
+cd storybook.atelierdesignsystem.com
 npm install`}</CodeBlock>
           </div>
           <div>
@@ -72,7 +72,7 @@ npm install`}</CodeBlock>
 
       {/* Project Structure */}
       <ComponentSection title="Project Structure" description="Key directories and their purpose.">
-        <CodeBlock>{`atelier-design-system/
+        <CodeBlock>{`storybook.atelierdesignsystem.com/
 ├── public/
 │   └── tokens/              # Machine-readable JSON manifest
 │       ├── manifest.json     # Central index
@@ -187,7 +187,7 @@ npm install`}</CodeBlock>
           <p className="text-xs font-mono text-muted-foreground mb-1.5">Fetch the manifest</p>
           <CodeBlock>{`const res = await fetch("/tokens/manifest.json");
 const manifest = await res.json();
-// { name: "atelier-design-system", version: "2.0.0", files: { ... } }`}</CodeBlock>
+// { name: "storybook.atelierdesignsystem.com", version: "2.0.0", files: { ... } }`}</CodeBlock>
         </div>
       </ComponentSection>
 

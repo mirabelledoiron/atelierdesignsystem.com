@@ -8,8 +8,17 @@ const storybookDir = path.dirname(fileURLToPath(import.meta.url));
 const config: StorybookConfig = {
   framework: "@storybook/react-vite",
   staticDirs: ["../public"],
-  stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
-  addons: ["@storybook/addon-docs", "@storybook/addon-a11y"],
+  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  addons: [{
+    name: "@storybook/addon-docs",
+    options: {
+      mdxPluginOptions: {
+        mdxCompileOptions: {
+          providerImportSource: "@storybook/addon-docs/mdx-react-shim",
+        },
+      },
+    },
+  }, "@storybook/addon-a11y", "@storybook/addon-vitest"],
   async viteFinal(config: UserConfig) {
     return mergeConfig(config, {
       resolve: {
